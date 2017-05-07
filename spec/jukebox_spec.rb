@@ -1,5 +1,4 @@
 require_relative 'spec_helper'
-require 'pry'
 
 songs = [
   "Phoenix - 1901",
@@ -15,9 +14,9 @@ songs = [
 
 describe "CLI Jukebox" do
 
-  context "methods" do 
-    describe "#help" do 
-      it "lists out the possible commands" do 
+  context "methods" do
+    describe "#help" do
+      it "lists out the possible commands" do
         expect { help }.to output(/^(?=.*help)(?=.*list)(?=.*play)(?=.*exit).+/m).to_stdout
       end
     end
@@ -45,14 +44,14 @@ describe "CLI Jukebox" do
     end
 
     describe "#list" do
-      it "lists out the available songs" do  
+      it "lists out the available songs" do
         expect { list(songs) }.to output(/Phoenix - 1901/).to_stdout
       end
     end
 
-    describe "#exit_jukebox" do 
+    describe "#exit_jukebox" do
       it "terminates the running of the program and outputs 'Goodbye'" do
-        expect { exit_jukebox }.to output(/Goodbye/).to_stdout 
+        expect { exit_jukebox }.to output(/Goodbye/).to_stdout
       end
     end
 
@@ -79,4 +78,3 @@ describe "CLI Jukebox" do
     end
   end
 end
-
